@@ -65,3 +65,6 @@ def expense_delete(adoption_id):
     """Delete one expense log."""
     expenses.delete_one({'_id': ObjectId(expense_id)})
     return redirect(url_for('expense_index'))
+
+if __name__ == '__main__':
+    app.run(debug=True, host='0.0.0.0', port=os.environ.get('PORT', 5000))
