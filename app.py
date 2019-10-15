@@ -15,3 +15,8 @@ app = Flask(__name__)
 def expense_index():
     """Return homepage"""
     return render_template('expense_index.html', expenses=expense.find())
+
+@app.route('/expense/new')
+    def expense_new():
+        """Return to the new expense log page"""
+        return render_template('expense_new.html', expense={}, title='New Expense Log')
