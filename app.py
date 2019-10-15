@@ -34,7 +34,15 @@ def expense_submit():
     return redirect(url_for('expense_show', expense_id=expense_id))
 
 @app.route('/expense/<expense_id>')
-def expense_show():
+def expense_show(expense_id):
     """Show a single expense log"""
     expense = expense.find_one({'_id': ObjectId(expense_id)})
+    return render_template('expense_show.html', expense=expense)
+
+@app.route('/expense/<expense_id>/edit')
+def expense_edit(expense_id):
+    """Show the edit form for an expense log"""
+    expense = expense.find_one({'_id': ObjectId(expense_id)})
     return render_template('expense_edit.html', expense=expense, title='Edit Expense Log')
+
+
