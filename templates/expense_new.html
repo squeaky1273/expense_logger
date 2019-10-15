@@ -5,4 +5,16 @@
 
 <h3><a href='/'>Back to Home</a></h3>
 
+<div class='row'>
+    <div class='col-sm-6 col-sm-offset-3'>
+        <form method='POST' action='/expense'>
+            {% include 'partials/expense_form.html' %}
+            <!-- BUTTON -->
+                <div class='form-group'>
+                    <button class='btn btn-primary' type='submit'>Save Expense Logger</button>
+                </div>
+        </form>
+    </div>
+</div>
+
 {% endblock %}

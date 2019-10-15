@@ -1,9 +1,9 @@
-from flask import Flask, render_template, request, redirect url_for
+from flask import Flask, render_template, request, redirect, url_for
 from pymongo import MongoClient
 from bson.objectid import ObjectId
 import os
 
-host = os.environ.get('MONGODB_URI', 'mongodb://localhost:27017/Contractor')
+host = os.environ.get('MONGODB_URI', 'mongodb://localhost:27017/Expense_Logger')
 client = MongoClient(host=f'{host}?retryWrites=false')
 db = client.get_default_database()
 
@@ -43,7 +43,7 @@ def expense_show(expense_id):
 @app.route('/expense/<expense_id>/edit')
 def expense_edit(expense_id):
     """Show the edit form for an expense log"""
-    expense = expense.find_one({'_id': ObjectId(expense_id)})
+    expense = expenses.find_one({'_id': ObjectId(expense_id)})
     return render_template('expense_edit.html', expense=expense, title='Edit Expense Log')
 
 @app.route('/expense/<expense_id>', method=['POST'])
