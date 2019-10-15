@@ -60,3 +60,8 @@ def expense_update(expense_id):
         {'$set': updated_expense})
     return redirect(url_for('expense_show', expense_id=expense_id))
 
+@app.route('/expense/<expense_id>/delete', methods=['POST'])
+def expense_delete(adoption_id):
+    """Delete one expense log."""
+    expenses.delete_one({'_id': ObjectId(expense_id)})
+    return redirect(url_for('expense_index'))
