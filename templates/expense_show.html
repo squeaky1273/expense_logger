@@ -1,4 +1,7 @@
 <!--templates/expense_show.html-->
+{% extends 'base.html' %}
+
+{% block content %}
 
 <p><form action='/expense/{{ expense._id }}/edit'>
     <input type='hidden' name='_method' value='EDIT'>   
@@ -10,3 +13,4 @@
 </form></p>
 </div>
 </div>
+{% endblock %}
