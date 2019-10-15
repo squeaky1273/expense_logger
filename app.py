@@ -7,14 +7,14 @@ host = os.environ.get('MONGODB_URI', 'mongodb://localhost:27017/Contractor')
 client = MongoClient(host=f'{host}?retryWrites=false')
 db = client.get_default_database()
 
-expense =db.expenses
+expenses =db.expenses
 
 app = Flask(__name__)
 
 @app.route('/')
 def expense_index():
     """Return homepage"""
-    return render_template('expense_index.html', expenses=expense.find())
+    return render_template('expense_index.html', expenses=expenses.find())
 
 @app.route('/expense/new')
 def expense_new():
@@ -25,18 +25,19 @@ def expense_new():
 def expense_submit():
     """Submit a new expense log. User can add log information for purchases made"""
     expense = {
+        'date purchased': request.form.get('date purchased'),
         'product name': request.form.get('product name'),
         'price': request.form.get('price'),
         'payment method': request.form.get('payment method')
     }
     print(expense)
-    expense_id = expense.insert_one(expense).inserted_id
+    expense_id = expenses.insert_one(expense).inserted_id
     return redirect(url_for('expense_show', expense_id=expense_id))
 
 @app.route('/expense/<expense_id>')
 def expense_show(expense_id):
     """Show a single expense log"""
-    expense = expense.find_one({'_id': ObjectId(expense_id)})
+    expense = expenses.find_one({'_id': ObjectId(expense_id)})
     return render_template('expense_show.html', expense=expense)
 
 @app.route('/expense/<expense_id>/edit')
@@ -45,4 +46,17 @@ def expense_edit(expense_id):
     expense = expense.find_one({'_id': ObjectId(expense_id)})
     return render_template('expense_edit.html', expense=expense, title='Edit Expense Log')
 
+@app.route('/expense/<expense_id>', method=['POST'])
+def expense_update(expense_id):
+    """Submit an edited expense log"""
+    updated_expense = {
+        'date purchased': request.form.get('date purchased'),
+        'product name': request.form.get('product name'),
+        'price': request.form.get('price'),
+        'payment method': request.form.get('payment method')
+    }
+    expenses.update_one(
+        {'_id': ObjectId(expense_id)},
+        {'$set': updated_expense})
+    return redirect(url_for('expense_show', expense_id=expense_id))
 
