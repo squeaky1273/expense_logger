@@ -32,3 +32,9 @@ def expense_submit():
     print(expense)
     expense_id = expense.insert_one(expense).inserted_id
     return redirect(url_for('expense_show', expense_id=expense_id))
+
+@app.route('/expense/<expense_id>')
+def expense_show():
+    """Show a single expense log"""
+    expense = expense.find_one({'_id': ObjectId(expense_id)})
+    return render_template('expense_edit.html', expense=expense, title='Edit Expense Log')
