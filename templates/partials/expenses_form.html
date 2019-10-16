@@ -1,28 +1,28 @@
 <!--templates/expenses_form.html-->
 
 <fieldset>
-        <legend>Edit Expense Log</legend>
+        <legend style='font-family:trajan'>Edit Expense Log</legend>
         <!-- DATE PURCHASED -->
         <div class='form-group'>
-            <label for='expense-title'>Date Purchased</label><br>
-            <input class='form-control' id='expense-title' type='date' name='date_purchased' value='{{ expense.date_purchased }}'/>
+            <label for='expense-title' style='font-family:trajan'>Date Purchased</label><br>
+            <input class='form-control' id='expense-title' type='date' style='font-family:trajan' name='date_purchased' value='{{ expense.date_purchased }}'/>
         </div>
 
         <!-- PRODUCT NAME-->
         <div class='form-group'>
-            <label for='description'>Product/Service Name</label><br>
-            <input class='form-control' id='description' type='text' name='name' value='{{ expense.product_name }}' />
+            <label for='description' style='font-family:trajan'>Product/Service Name</label><br>
+            <input class='form-control' id='description' type='text' style='font-family:trajan' name='name' value='{{ expense.product_name }}' />
         </div>
 
         <!-- PRICE -->
         <div class='form-group'>
-            <label for='description'>Price of the Product/Service</label><br>
-            <input class='form-control' id='description' type='number' name='price' value='{{ expense.price }}' />
+            <label for='description' style='font-family:trajan'>Price of the Product/Service</label><br>
+            <input class='form-control' id='description' type='number' style='font-family:trajan' name='price' value='{{ expense.price }}' />
         </div>
         
         <!-- PAYMENT METHOD-->
         <div class='form-group'>
-            <label for='description'>Payment Method</label><br>
-            <input class='form-control' id='description' type='text' name='payment_method' value='{{ expense.payment_method }}' />
+            <label for='description' style='font-family:trajan'>Payment Method</label><br>
+            <input class='form-control' id='description' type='text' style='font-family:trajan' name='payment_method' value='{{ expense.payment_method }}' />
         </div>
     </fieldset>

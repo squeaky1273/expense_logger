@@ -3,14 +3,14 @@
 
 {% block content %}
 <!--Website Homepage-->
-<h1><center><strong><bold>Chump Change</bold</strong></center></h1>
+<h1 style='font-size:50px; font-family:trajan'><center><strong><bold>Chump Change</bold</strong></center></h1>
     <br>
     <br>
     <br>
     <div class='row'>
         {% for expense in expenses %}
             <div class='col-md-3'>
-                <h2><a href='/expenses/{{ expense._id }}'>{{ expense.date_purchased }}</a></h2>
+                <h2 style='font-family:trajan'><a href='/expenses/{{ expense._id }}'>{{ expense.date_purchased }}</a></h2>
             </div>
         {% endfor %}
     </div>
