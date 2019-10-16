@@ -46,7 +46,7 @@ def expense_edit(expense_id):
     expense = expenses.find_one({'_id': ObjectId(expense_id)})
     return render_template('expense_edit.html', expense=expense, title='Edit Expense Log')
 
-@app.route('/expense/<expense_id>', method=['POST'])
+@app.route('/expense/<expense_id>', methods=['POST'])
 def expense_update(expense_id):
     """Submit an edited expense log"""
     updated_expense = {
