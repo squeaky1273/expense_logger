@@ -1,4 +1,4 @@
-<!--templates/expense_show.html-->
+<!--templates/expenses_show.html-->
 {% extends 'base.html' %}
 
 {% block content %}
@@ -22,11 +22,11 @@
     </table>
     </body>
 
-<p><form action='/expense/{{ expense._id }}/edit'>
+<p><form action='/expenses/{{ expense._id }}/edit'>
     <input type='hidden' name='_method' value='EDIT'>   
     <button class='btn btn-primary' type='submit'>Edit Expense Logger</button>
 </form></p>
-<p><form method='POST' action='/expense/{{ expense._id }}/delete'>
+<p><form method='POST' action='/expenses/{{ expense._id }}/delete'>
     <input type='hidden' name='_method' value='DELETE'>
     <button class='btn btn-primary' type='submit'>Delete Expense Logger</button>
 </form></p>

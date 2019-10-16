@@ -1,13 +1,13 @@
-<!--templates/expense_index.html-->
+<!--templates/expenses_index.html-->
 {% extends 'base.html' %}
 <h1><center><strong><bold>Chump Change</bold</strong></center></h1>
     <br>
     <br>
     <br>
     <div class='row'>
-        {% for expense in expense %}
+        {% for expense in expenses %}
             <div class='col-md-3'>
-                <h2><a href='/expense/{{ expense._id }}'>{{ expense.date_purchased }}</a></h2>
+                <h2><a href='/expenses/{{ expense._id }}'>{{ expense.date_purchased }}</a></h2>
             </div>
         {% endfor %}
     </div>
