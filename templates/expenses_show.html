@@ -6,23 +6,21 @@
 <h4><a href='/' style='font-size:20px;font-family:trajan'>Back to Home</a></h4>
 <div class='table'>
     <div class='col-sm-6 col-sm-offset-3'>
-      <h2 style='font-family:trajan'>Expense Log: {{expense.date_purchased}}</h2>
+      <h2 style='font-family:trajan'>Expense Log: {{ expense.date_purchased }}</h2>
       <br>
       <table>
         <head>
-          <tr>
-            <h3 style='font-size:15px; font-family:trajan'><th>Date Purchased</th></h3>
-            <h3 style='font-size:15px; font-family:trajan'><th>Product Name</th></h3>
-            <h3 style='font-size:15px; font-family:trajan'><th>Price</th></h3>
-            <h3 style='font-size:15px; font-family:trajan'><th>Payment Method</th></h3>
+          <tr style='font-size:20px; font-family:trajan'>
+            <h2><th>Product/Service Name</th></h2>
+            <h2><th>Price</th></h2>
+            <h2><th>Payment Method</th></h2>
           </tr>
         </head>
         </body>
-          <tr>
-            <h3 style='font-size:15px; font-family:trajan'><td>{{expense.date_puchased}}</td></h3>
-            <h3 style='font-size:15px; font-family:trajan'><td>{{expense.product_name}}</td></h3>
-            <h3 style='font-size:15px; font-family:trajan'><td>${{expense.price}}</td></h3>
-            <h3 style='font-size:15px; font-family:trajan'><td>{{expense.payment_method}}</td></h3>
+          <tr style='font-size:20px; font-family:trajan'>
+            <h2><td>{{ expense.product_name }}</td></h2>
+            <h2><td>${{ expense.price }}</td></h2>
+            <h2><td>{{ expense.payment_method }}</td></h2>
           </tr>
         </body>
       </table>

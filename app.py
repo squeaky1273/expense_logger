@@ -38,7 +38,7 @@ def expenses_submit():
 def expenses_show(expense_id):
     """Show a single expense log"""
     expense = expense_log.find_one({'_id': ObjectId(expense_id)})
-    return render_template('expense_show.html', expense=expense)
+    return render_template('expenses_show.html', expense=expense)
 
 @app.route('/expenses/<expense_id>/edit')
 def expenses_edit(expense_id):
@@ -60,7 +60,7 @@ def expenses_update(expense_id):
         {'$set': updated_expense})
     return redirect(url_for('expenses_show', expense_id=expense_id))
 
-@app.route('/expenses/<adoption_id>/delete', methods=['POST'])
+@app.route('/expenses/<expense_id>/delete', methods=['POST'])
 def expenses_delete(expense_id):
     """Delete one expense log."""
     expense_log.delete_one({'_id': ObjectId(expense_id)})

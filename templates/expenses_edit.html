@@ -10,9 +10,10 @@
         <form method='POST' action='/expenses/{{expense._id}}'>
             <input type='hidden' name='_method' value='PUT'/>
             {% include 'partials/expenses_form.html' %}
+            <br>
             <!-- BUTTON -->
             <div class='form-group'>
-                <h4 style='font-size:15px; font-family:trajan'><button class='btn btn-primary' type='submit'>Save Expense Log</button></h4>
+                <h3 style='font-size:20px; font-family:trajan'><button class='btn btn-primary' type='submit'>Save Expense Log</button></h3>
             </div>
         </form>
     </div>
