@@ -25,10 +25,10 @@ def expense_new():
 def expense_submit():
     """Submit a new expense log. User can add log information for purchases made"""
     expense = {
-        'date purchased': request.form.get('date purchased'),
-        'product name': request.form.get('product name'),
+        'date_purchased': request.form.get('date purchased'),
+        'product_name': request.form.get('product name'),
         'price': request.form.get('price'),
-        'payment method': request.form.get('payment method')
+        'payment_method': request.form.get('payment method')
     }
     print(expense)
     expense_id = expenses.insert_one(expense).inserted_id
@@ -50,10 +50,10 @@ def expense_edit(expense_id):
 def expense_update(expense_id):
     """Submit an edited expense log"""
     updated_expense = {
-        'date purchased': request.form.get('date purchased'),
-        'product name': request.form.get('product name'),
+        'date_purchased': request.form.get('date purchased'),
+        'product_name': request.form.get('product name'),
         'price': request.form.get('price'),
-        'payment method': request.form.get('payment method')
+        'payment_method': request.form.get('payment method')
     }
     expenses.update_one(
         {'_id': ObjectId(expense_id)},
