@@ -7,7 +7,7 @@ host = os.environ.get('MONGODB_URI', 'mongodb://localhost:27017/Expense_Logger')
 client = MongoClient(host=f'{host}?retryWrites=false')
 db = client.get_default_database()
 
-expense_log =db.expenses
+expense_log = db.expenses
 
 app = Flask(__name__)
 
@@ -25,10 +25,10 @@ def expenses_new():
 def expenses_submit():
     """Submit a new expense log. User can add log information for purchases made"""
     expense = {
-        'date_purchased': request.form.get('date purchased'),
-        'product_name': request.form.get('product name'),
+        'date_purchased': request.form.get('date_purchased'),
+        'product_name': request.form.get('product_name'),
         'price': request.form.get('price'),
-        'payment_method': request.form.get('payment method')
+        'payment_method': request.form.get('payment_method')
     }
     print(expense)
     expense_id = expense_log.insert_one(expense).inserted_id
@@ -50,10 +50,10 @@ def expenses_edit(expense_id):
 def expenses_update(expense_id):
     """Submit an edited expense log"""
     updated_expense = {
-        'date_purchased': request.form.get('date purchased'),
-        'product_name': request.form.get('product name'),
+        'date_purchased': request.form.get('date_purchased'),
+        'product_name': request.form.get('product_name'),
         'price': request.form.get('price'),
-        'payment_method': request.form.get('payment method')
+        'payment_method': request.form.get('payment_method')
     }
     expense_log.update_one(
         {'_id': ObjectId(expense_id)},

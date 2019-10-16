@@ -5,7 +5,7 @@
         <!-- DATE PURCHASED -->
         <div class='form-group'>
             <label for='expense-title'>Date Purchased</label><br>
-            <input class='form-control' id='expense-title' type='text' name='dtae' value='{{ expense.date_purchased }}'/>
+            <input class='form-control' id='expense-title' type='date' name='date_purchased' value='{{ expense.date_purchased }}'/>
         </div>
 
         <!-- PRODUCT NAME-->
@@ -23,6 +23,6 @@
         <!-- PAYMENT METHOD-->
         <div class='form-group'>
             <label for='description'>Payment Method</label><br>
-            <input class='form-control' id='description' type='text' name='payment method' value='{{ expense.payment_method }}' />
+            <input class='form-control' id='description' type='text' name='payment_method' value='{{ expense.payment_method }}' />
         </div>
     </fieldset>
