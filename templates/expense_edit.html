@@ -5,4 +5,17 @@
 
 <h3><a href='/'>Back to Home</a></h3>
 
+<div class='row'>
+    <div class='col-sm-6 col-sm-offset-3'>
+        <form method='POST' action='/expense/{{expense._id}}'>
+            <input type='hidden' name='_method' value='PUT'/>
+            {% include 'partials/expense_form.html' %}
+            <!-- BUTTON -->
+            <div class='form-group'>
+                <h4><button class='btn btn-primary' type='submit'>Save Expense Log</button></h4>
+            </div>
+        </form>
+    </div>
+</div>
+
 {% endblock %}
