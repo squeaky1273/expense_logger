@@ -1,28 +1,28 @@
 <!--templates/expenses_form.html-->
 
 <fieldset>
-        <legend style='font-size:25px; font-family:trajan'>Edit Expense Log</legend>
+        <legend style='color:#000000; font-size:25px; font-family:trajan'>Edit Expense Log</legend>
         <!-- DATE PURCHASED -->
         <div class='form-group'>
-            <label for='expense-title' style='font-size:15px; font-family:trajan'>Date Purchased</label><br>
-            <input class='form-control' id='description' type='date' style='font-size:15px; font-family:trajan' name='date_purchased' value='{{ expense.date_purchased }}'/>
+            <label for='expense-title' style='color:#000000; font-size:15px; font-family:trajan'>Date Purchased</label><br>
+            <input class='form-control' id='description' type='date' style=' color:#000000; font-size:15px; font-family:trajan' name='date_purchased' value='{{ expense.date_purchased }}'/>
         </div>
 
-        <!-- PRODUCT NAME-->
+        <!-- PRODUCT/SERVICE NAME-->
         <div class='form-group'>
-            <label for='description' style='font-size:15px; font-family:trajan'>Product/Service Name</label><br>
-            <input class='form-control' id='description' type='text' style='font-size:15px; font-family:trajan' name='product_name' value='{{ expense.product_name }}' />
+            <label for='description' style='color:#000000; font-size:15px; font-family:trajan'>Product/Service Name</label><br>
+            <input class='form-control' id='description' type='text' style='color:#000000; font-size:15px; font-family:trajan' name='product_name' value='{{ expense.product_name }}' />
         </div>
 
         <!-- PRICE -->
         <div class='form-group'>
-            <label for='description' style='font-size:15px; font-family:trajan'>Price of the Product/Service</label><br>
-            <input class='form-control' id='amount' type='number' step='0.01' style='font-size:15px; font-family:trajan' name='price' value='{{ expense.price }}' />
+            <label for='description' style='color:#000000; font-size:15px; font-family:trajan'>Price of the Product/Service</label><br>
+            <input class='form-control' id='amount' type='number' step='0.01' style='color:#000000; font-size:15px; font-family:trajan' name='price' value='{{ expense.price }}' />
         </div>
         
         <!-- PAYMENT METHOD-->
         <div class='form-group'>
-            <label for='description' style='font-size:15px; font-family:trajan'>Payment Method</label><br>
-            <input class='form-control' id='description' type='text' style='font-size:15px; font-family:trajan' name='payment_method' value='{{ expense.payment_method }}' />
+            <label for='description' style='color:#000000; font-size:15px; font-family:trajan'>Payment Method</label><br>
+            <input class='form-control' id='description' type='text' style='color:#000000; font-size:15px; font-family:trajan' name='payment_method' value='{{ expense.payment_method }}' />
         </div>
     </fieldset>
