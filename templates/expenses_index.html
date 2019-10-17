@@ -12,7 +12,8 @@
     <div class='row'>
         {% for expense in expenses %}
             <div class='col-md-3'>
-                <h2 style='font-size:20px; font-family:trajan'><a href='/expenses/{{ expense._id }}'>{{ expense.date_purchased }}</a></h2>
+                <h2 style='font-size:20px; font-family:trajan'><a href='/expenses/{{ expense._id }}'>{{ expense.product_name }}</a></h2>
+                <h3 style='font-size:15px; font-family:trajan'><a href='/expenses/{{ expense._id }}'>{{ expense.date_purchased }}</a></h3>
             </div>
         {% endfor %}
 {% endblock %}
