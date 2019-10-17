@@ -4,20 +4,35 @@
 {% block content %}
 <!--Show Existing Log-->
 <h4><a href='/' style='font-size:20px;font-family:trajan'>Back to Home</a></h4>
+<br>
 <div class='table'>
     <div class='col-sm-6 col-sm-offset-3'>
-      <h2 style='font-family:trajan'>Expense Log: {{ expense.date_purchased }}</h2>
+      <h2 style='font-size:19.94px; font-family:trajan'>Expense Log: {{ expense.date_purchased }}</h2>
       <br>
       <table>
         <head>
-          <tr style='font-size:20px; font-family:trajan'>
+          <style>
+            table {
+              font-family: trajan;
+              font-size:20px;
+              color:#000000;
+              width: 100%;
+            }
+            td, th {
+              padding: 8px;
+            }
+            tr {
+              background-color: #ccffb3
+            }
+          </style>
+        </head>
+        </body>
+          <tr>
             <h2><th>Product/Service Name</th></h2>
             <h2><th>Price</th></h2>
             <h2><th>Payment Method</th></h2>
           </tr>
-        </head>
-        </body>
-          <tr style='font-size:20px; font-family:trajan'>
+          <tr>
             <h2><td>{{ expense.product_name }}</td></h2>
             <h2><td>${{ expense.price }}</td></h2>
             <h2><td>{{ expense.payment_method }}</td></h2>

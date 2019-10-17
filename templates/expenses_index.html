@@ -3,8 +3,10 @@
 
 {% block content %}
 <!--Website Homepage-->
-<h1 style='font-size:50px; font-family:trajan'><center><strong><bold>Chump Change</bold</strong></center></h1>
+<h1 style='font-size:60px; font-family:trajan'><center><strong><bold>Chump Change</bold</strong></center></h1>
     <br>
+    <img src="/static/img_url/coin.png" style = "width:250px;height:200px">
+    <img src="/static/img_url/cash.png" style = "float: right; width:250px;height:200px">
     <br>
     <br>
     <div class='row'>
@@ -13,5 +15,4 @@
                 <h2 style='font-size:20px; font-family:trajan'><a href='/expenses/{{ expense._id }}'>{{ expense.date_purchased }}</a></h2>
             </div>
         {% endfor %}
-    </div>
 {% endblock %}
