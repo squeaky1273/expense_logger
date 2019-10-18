@@ -1,0 +1,26 @@
+<!--templates/login_index.html-->
+{% extends 'base.html' %}
+
+{% block content %}
+<html>
+    <head>
+        <title>Login</title>
+        <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css'>
+        <link rel='stylesheet' href='https://bootswatch.com/4/lux/bootstrap.min.css'>
+    </head>
+    <body>
+        <div class='container'>
+            <h3>Please login</h3>
+            <br>
+            <form action='/login' method='POST'>
+                <input type='text' placeholder='Username' name='username' value='{{ request.form.username }}'>
+                <input type='text' placeholder='Password' name='password' value='{{ request.form.password }}'>
+                <input class='button' type='submit' value='Login'>
+            </form>
+            {% if error %}
+                <p class'error'>Error: {{ error }}</p>
+            {% endif %}
+        </div>
+    </body>
+</html>
+{% endblock %}

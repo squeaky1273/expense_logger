@@ -8,8 +8,35 @@ client = MongoClient(host=f'{host}?retryWrites=false')
 db = client.get_default_database()
 
 expense_log = db.expenses
+login_log = db.login
 
 app = Flask(__name__)
+
+@app.route('/')
+def login_index():
+    """Return homepage"""
+    return render_template('login_index.html', login=login_log.find())
+
+@app.route('/login/new')
+def login_new():
+    """Create new login"""
+    return render_template('login_new.html', login_new={}, title='New Login')
+
+@app.route('/', methods=['GET', 'POST'])
+def login_enter():
+    """Return a Login page"""
+    error = None
+    if request.method == 'POST':
+        if request.form['username'] != request.form.get('username') or request.form['password'] != request.form.get('password'):
+            error = "Please try again."
+        else:
+            return redirect(url_for('expenses_index'))
+    return render_template('login_index.html', error=error)
+
+@app.route('/')
+def login_delete():
+    """Delete login"""
+    return render_template('login_delete.html')
 
 @app.route('/')
 def expenses_index():
