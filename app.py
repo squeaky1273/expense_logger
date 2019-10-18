@@ -12,31 +12,38 @@ login_log = db.login
 
 app = Flask(__name__)
 
+"""Login Route in Progress/Includes template files with login attatched to it."""
 @app.route('/')
 def login_index():
     """Return homepage"""
     return render_template('login_index.html', login=login_log.find())
+
+@app.route('/login', methods=['POST'])
+def login_return():
+    """Return as an existing user"""
+    if request.form['password'] == 'password' and request.form['username'] == 'admin':
+        session['logged_in'] = True
+    else:
+        print('wrong password!')
+    return login_index()
+
+@app.route("/logout")
+def logout():
+    """Allow user to logout"""
+    session['logged_in'] = False
+    return login_index()
 
 @app.route('/login/new')
 def login_new():
     """Create new login"""
     return render_template('login_new.html', login_new={}, title='New Login')
 
-@app.route('/', methods=['GET', 'POST'])
-def login_enter():
-    """Return a Login page"""
-    error = None
-    if request.method == 'POST':
-        if request.form['username'] != request.form.get('username') or request.form['password'] != request.form.get('password'):
-            error = "Please try again."
-        else:
-            return redirect(url_for('expenses_index'))
-    return render_template('login_index.html', error=error)
-
 @app.route('/')
 def login_delete():
     """Delete login"""
     return render_template('login_delete.html')
+
+"""End of Login in progress"""
 
 @app.route('/')
 def expenses_index():

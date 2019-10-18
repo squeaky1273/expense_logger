@@ -1,5 +1,6 @@
 <!--templates/login_new.html-->
 {% extends 'base.html' %}
+{% extends 'login_index.html' %}
 
 {% block content %}
 <body>
@@ -7,7 +8,7 @@
         <div class = 'card'>
             <div class='card-body'>
                 <form method = 'POST' action = '/login_submit'>
-                    <h1>Create an account!</h1>
+                    <h1>Create new account</h1>
                     <label for = 'username'>Username: </label>
                     <input type = 'username' name = 'username'>
                     <br>
@@ -16,10 +17,10 @@
                     <input type = 'password' name = 'password'>
                     <br>
                     <br>
-                    <button class='button' type='submit'>Sign Up</button>
+                    <button class='btn btn-primary' type='submit'>Sign Up</button>
                 </form>
+            </div>
         </div>
     </div>
-</div>
 </body>
 {% endblock %}

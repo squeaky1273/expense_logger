@@ -9,17 +9,29 @@
         <link rel='stylesheet' href='https://bootswatch.com/4/lux/bootstrap.min.css'>
     </head>
     <body>
-        <div class='container'>
-            <h3>Please login</h3>
+        <div class='container,col-sm-6 col-sm-offset-3'>
+            <h3 style='color:#000000; font-size:20px; font-family:trajan'>Please login</h3>
             <br>
             <form action='/login' method='POST'>
-                <input type='text' placeholder='Username' name='username' value='{{ request.form.username }}'>
-                <input type='text' placeholder='Password' name='password' value='{{ request.form.password }}'>
-                <input class='button' type='submit' value='Login'>
+                <input style='color:#000000; font-size:15px; font-family:trajan' type='text' placeholder='Username' name='username' value='{{ request.form.username }}'>
+                <input style='color:#000000; font-size:15px; font-family:trajan' type='text' placeholder='Password' name='password' value='{{ request.form.password }}'>
+                <input style='color:#000000; font-size:15px; font-family:trajan'class='button' type='submit' value='Login'>
             </form>
             {% if error %}
                 <p class'error'>Error: {{ error }}</p>
             {% endif %}
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <div class='container,col-sm-6 col-sm-offset-3'>        
+            <p style='color:#000000; font-size:15px; font-family:trajan'>Don't Have a Account?</p>
+            <button class='btn btn-primary' type='submit'>New Account</button>
         </div>
     </body>
 </html>
